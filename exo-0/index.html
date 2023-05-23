@@ -7,59 +7,78 @@
 
         <h1>Exercice 0</h1>
 
-        <script type="text/javascript">
+        <script type="text/javascript"> // balise délimitant l'endroit ou on écrit le javascript
 
         /* Section 1 */   
 
-        var name = "Joe";
-        var city = 'London';
-        var age = 32;
-        var isRed = true;
-        var isOld = age > 80;
+        var name = "Joe"; // déclaration d'une variable de type string qui a pour valeur Joe
+        var city = 'London'; // déclaration d'une variable de type string qui a pour valeur London
+        var age = 32; // déclaration d'une variable de type number qui a pour valeur 32
+        var isRed = true; // déclaration d'une variable de type booléen qui a pour valeur true (vrai)
+        var isOld = age > 80; // déclaration d'une variable de type booléen : age = 32 -> renvoie FALSE
 
-        var previousJobs = ['lawyer', 'developper', 'Professionnal climber'];
-
+        var previousJobs = ['lawyer', 'developper', 'Professionnal climber']; // déclaration d'une variable tableau contenant des string
+        
+        // déclaration d'une fonction appelée info, qui prend 2 paramètres
         function info(height, weight) {
-            if (height > 180) {
+            if (height > 180) { // si la taille > 180, la console affichera 'Vous êtes grand'
                 console.log('Vous êtes grand');
             }
-            if (weight < 0) {
+            if (weight < 0) { // si le poids est < 0, la console affichera 'oups, there is a problem'
                 console.log('oups, there is a problem');
-            } else if ( weight < 15) {
+            } else if ( weight < 15) { // sinon, si le poids est < 15, la console affichera 'Are you that slim ?'
                 console.log('Are you that slim ?')
-            } else {
+            } else { // sinon, on affiche 'good !'
                 console.log('Good !')
             }
         }
 
-        info(165, 45);
+        info(165, 45); // appel de la fonction info en passant en paramètre les nombres 165 pour height et 45 pour weight
 
+        // déclaration de deux variables personnalisant la taille et le poids.
         var myHeight = 175;
         var myWeight = 86;
 
-        info(myHeight, myWeight);
+        info(myHeight, myWeight); // appel de la fonction info en passant en paramètres les deux variables déclarées au dessus
 
-        info(myHeight + 15, myWeight - 100);
+        // appel de la fonction info en passant en paramètres les deux variables déclarées au dessus 
+        // et en utilisant les opération arithmétiques addition et soustraction afin de modifier le résultat
+        info(myHeight + 15, myWeight - 100); 
 
+        // déclaration d'une nouvelle fonction prenant un paramètre. 
+        // L'objectif est de modifier le contenu de la variable (de type string) passée en paramètre en lettres capitale
         function toUpper(variable) {
             return variable.toUpperCase();
         }
 
+        // déclaration d'une variable nommée upperName, qui reprendra la variable name, modifiée par la fonction toUpper.
+        // quand appelée, upperName devrait retourner 'JOE'.
         var upperName = toUpper(name);
 
+        // création d'une boucle for permettant successivement d'afficher le contenu de la variable tableau previousJobs.
         for (i = 0; i < 3; i = i + 1) {
             console.log(previousJobs[i]);
         }
 
         /* Section 2: */
 
-        // afficher la ville dans laquele Joe vit.     
+        // afficher la ville dans laquele Joe vit.
+        console.log(city);
 
         // afficher si Joe est roux ou pas.
+        function joeIsRed(isRed) {
+            if (isRed == true) {
+                console.log('Joe est Roux');
+            } else {
+                console.log("Joe n'est pas roux");
+            }
+        }
+
+        joeIsRed(isRed);
 
         /* Section 3 */
 
-        // console.log(myVariable);
+        console.log(myVariable); // affiche une erreur dans la console du navigateur puisque myVariable n'est pas déclarée.
 
         </script>
 
