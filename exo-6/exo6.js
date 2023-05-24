@@ -27,7 +27,7 @@ joeInfo.garage = true;
 // Suite exercice 
 let team = {};
 team = {
-    players : [{
+    players: [{
         firstName: "Pablo",
         lastName: "Sanchez",
         age: 11
