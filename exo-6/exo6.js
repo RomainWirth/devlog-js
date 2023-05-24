@@ -37,21 +37,21 @@ team = {
         teamPoints: 42,
         opponentPoints: 27
     }],
-    addPlayer: function(firstName, lastName, age) {
+    addPlayer(firstName, lastName, age) {
         this.players.push({
             firstName, 
             lastName, 
             age
         });
     },
-    addGame: function(opponent, teamPoints, opponentPoints) {
+    addGame(opponent, teamPoints, opponentPoints) {
         this.games.push({
             opponent,
             teamPoints,
             opponentPoints
         })
     },
-    teamPointsCalculus: function() {
+    teamPointsCalculus() {
         let sum = 0;
         for (i = 0; i < this.games.length; i++) {
             // console.log(this.games[i].teamPoints);
@@ -59,7 +59,7 @@ team = {
         }
         return sum;
     },
-    opponentPointsAverage: function() {
+    opponentPointsAverage() {
         let sum = 0;
         for (i = 0; i < this.games.length; i++) {
             // console.log(this.games[i].opponentPoints);
@@ -68,7 +68,7 @@ team = {
         let average = sum / this.games.length;
         return average;        
     },
-    mostAgedPlayer: function() {
+    mostAgedPlayer() {
         let ages = [];
         for (i = 0; i < this.players.length; i++) {
             ages.push(this.players[i].age);
@@ -80,9 +80,14 @@ team = {
         let maximum = Math.max(...ages);
         // console.log(maximum);
 
-        let oldestPlayer = this.players.find(player => player.age === maximum);
+        let oldestPlayer = this.players.find(function(player) {
+            return player.age === maximum;
+        });
         // console.log(oldestPlayer);
         return oldestPlayer;
+    },
+    sortPlayers() {
+        return this.players.sort((player1, player2) => player1.lastName.localeCompare(player2.lastName));
     }
 };
 team.addPlayer("Toto","Pimpin", 9);
@@ -105,3 +110,6 @@ let averageOpponentPoints = team.opponentPointsAverage();
 
 let myVar = team.mostAgedPlayer();
 console.log(myVar);
+
+let sortedPlayers = team.sortPlayers();
+console.log(sortedPlayers);
