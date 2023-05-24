@@ -100,13 +100,13 @@ team.addGame("Naruto", 20, 75);
 team.addGame("Luffy", 60, 35);
 team.addGame("Goku", 75, 55);
 
-// console.log(team);
+console.log(team);
 
 let totalTeamPoints = team.teamPointsCalculus();
-// console.log(totalTeamPoints);
+console.log(totalTeamPoints);
 
 let averageOpponentPoints = team.opponentPointsAverage();
-// console.log(averageOpponentPoints);
+console.log(averageOpponentPoints);
 
 let myVar = team.mostAgedPlayer();
 console.log(myVar);
