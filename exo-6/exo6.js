@@ -67,6 +67,22 @@ team = {
         }
         let average = sum / this.games.length;
         return average;        
+    },
+    mostAgedPlayer: function() {
+        let ages = [];
+        for (i = 0; i < this.players.length; i++) {
+            ages.push(this.players[i].age);
+            // console.log(typeof(ages[i]));
+        }
+        ages;
+        // console.log(ages);
+
+        let maximum = Math.max(...ages);
+        // console.log(maximum);
+
+        let oldestPlayer = this.players.find(player => player.age === maximum);
+        // console.log(oldestPlayer);
+        return oldestPlayer;
     }
 };
 team.addPlayer("Toto","Pimpin", 9);
@@ -82,7 +98,10 @@ team.addGame("Goku", 75, 55);
 // console.log(team);
 
 let totalTeamPoints = team.teamPointsCalculus();
-console.log(totalTeamPoints);
+// console.log(totalTeamPoints);
 
 let averageOpponentPoints = team.opponentPointsAverage();
-console.log(averageOpponentPoints);
+// console.log(averageOpponentPoints);
+
+let myVar = team.mostAgedPlayer();
+console.log(myVar);
