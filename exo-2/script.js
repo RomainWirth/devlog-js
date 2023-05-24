@@ -7,8 +7,8 @@ console.log("init variable isTesting (booléen)", isTesting);
 const myDate = new Date();
 console.log(myDate);
 
-let weekDay = "Aujourd'hui est un jour de semaine";
-let weekEndDay = "Ajourd'hui est un jour de week-end";
+const weekDay = "Aujourd'hui est un jour de semaine";
+const weekEndDay = "Ajourd'hui est un jour de week-end";
 
 let today;
 let hourNow;

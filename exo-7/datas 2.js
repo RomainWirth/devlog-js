@@ -1,5 +1,4 @@
-var jsonDatas=[
-{
+var jsonDatas=[{
 	"type" : "car",
 	"items": [
 		{
@@ -14,4 +13,4 @@ var jsonDatas=[
 			}
 		}
 	]
-}
+}]
