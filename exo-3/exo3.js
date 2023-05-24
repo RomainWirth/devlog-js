@@ -12,7 +12,7 @@ let playerInput = prompt("Your choice (rock, paper, scissors) ?");
 
 const getPlayerChoice = (playerInput) => {
     playerInput = playerInput.toLowerCase();
-    if (playerInput == ROCK || playerInput == PAPER || playerInput == SCISSORS) {
+    if (playerInput == ROCK || playerInput == PAPER || playerInput == SCISSORS || playerInput == CHEAT) {
          return playerInput;
     } else {
         alert("Merci d'entrer l'un des mots suivants : rock, paper ou scissors");
@@ -67,6 +67,9 @@ const findWinner = (playerChoice, computerChoice) => {
             gameResult = 'Lost';
         }
         return gameResult;
+    }
+    if (playerChoice == CHEAT) {
+        return gameResult = 'Won';
     }
     
 } // end function
