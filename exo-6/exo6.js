@@ -23,3 +23,56 @@ joeInfo.garage = true;
 console.log("Joe possède un garage :",joeInfo.garage);
 
 console.log(joeInfo);
+
+// Suite exercice 
+let team = {};
+team = {
+    players : [{
+        firstName: "Pablo",
+        lastName: "Sanchez",
+        age: 11
+    }],
+    games: [{
+        opponent: "Broncos",
+        teamPoints: 42,
+        opponentPoints: 27
+    }],
+    addPlayer: function(firstName, lastName, age) {
+        this.players.push({
+            firstName, 
+            lastName, 
+            age
+        });
+    },
+    addGame: function(opponent, teamPoints, opponentPoints) {
+        this.games.push({
+            opponent,
+            teamPoints,
+            opponentPoints
+        })
+    }
+};
+team.addPlayer("Toto","Pimpin", 9);
+team.addPlayer("Lucas", "Hoang", 22);
+team.addPlayer("Ugo", "Wadoux", 24);
+team.addPlayer("Ezra", "Strikwerda", 35);
+
+team.addGame("OuiOui", 35, 50);
+team.addGame("Naruto", 20, 80);
+team.addGame("Luffy", 60, 40);
+team.addGame("Goku", 75, 60);
+
+console.log(team);
+
+
+
+        // let newPlayer = {
+        //     firstName: firstName,
+        //     lastName: lastName,
+        //     age: arguments
+        // };
+        // this.players.push(newPlayer);
+
+
+
+        // team.addPlayer("Toto","Pimpin", 9);
