@@ -4,6 +4,7 @@ console.log('exo-3');
 const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors';
+const CHEAT = 'bomb';
 
 let playerInput = prompt("Your choice (rock, paper, scissors) ?");
 //console.log(playerInput);
@@ -67,6 +68,7 @@ const findWinner = (playerChoice, computerChoice) => {
         }
         return gameResult;
     }
+    
 } // end function
 
 const playGame = () => {
