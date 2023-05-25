@@ -5,6 +5,7 @@ console.log("exo-7");
 
 let data = jsonDatas;
 console.log("base de données :", data);
+
 let translateType = {
     car: "Voitures",
     house: "Maison",
@@ -14,8 +15,8 @@ let translateType = {
 }
 
 for (i = 0; i < data.length; i++) {
-    console.log(data[i]);
-    let dataTypes = data[i].type;
-    console.log("type de produit (eng) :", dataTypes);
-    
+    // console.log(data[i]);
+    console.log("type de produit (eng) :", data[i].type);
+    data[i].translatedType = translateType[data[i].type];
 }
+console.log(data);
