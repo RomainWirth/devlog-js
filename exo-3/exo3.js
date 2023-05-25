@@ -38,38 +38,30 @@ const getComputerChoice = () => {
     return result;
 } // end function
 
-const findWinner = (playerChoice, computerChoice) => {
-    let gameResult; 
+const findWinner = (playerChoice, computerChoice) => { 
     if (playerChoice == computerChoice) {
-        gameResult = 'Tied';
-        return gameResult;
+        return 'Tied';
     }
     if (playerChoice == ROCK) {
         if (computerChoice == SCISSORS) {
-            gameResult = 'Won';
-        } else {
-            gameResult = 'Lost';
+            return 'Won';
         }
-        return gameResult;
+        return 'Lost';
     }
     if (playerChoice == PAPER) {
         if (computerChoice == ROCK) {
-            gameResult = 'Won';
-        } else {
-            gameResult = 'Lost';
-        }
+            return 'Won';
+        } 
         return gameResult;
     }
     if (playerChoice == SCISSORS) {
         if (computerChoice == PAPER) {
-            gameResult = 'Won';
-        } else {
-            gameResult = 'Lost';
+            return 'Won';
         }
-        return gameResult;
+        return 'Lost';
     }
     if (playerChoice == CHEAT) {
-        return gameResult = 'Won';
+        return 'Won';
     }
     
 } // end function
