@@ -1,4 +1,4 @@
-var jsonDatas=[
+var jsonDatas = [
 	{
 		"name" :"Fiat Punto",
 		"type" : "car",

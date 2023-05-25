@@ -21,7 +21,7 @@ https://dom-tutorials.appspot.com/static/index.html
 
 1. Parcourir les articles fournis pour les afficher un à un dans la console
 
-2. Créer un objet qui servira à traduire les types. Cet objet aura pour structure `{type : "type traduit"}`. Par exemple `{videoGame:"Jeux Vidéos"}`.
+2. Créer un objet qui servira à traduire en français les types. Cet objet aura pour structure `{type : "type traduit"}`. Par exemple `{videoGame:"Jeux Vidéos"}`.
 
 3. Ajouter une nouvelle clé aux objets existants pour stocker le type traduit, sans modifier le fichier data.js. Répéter l'étape 1 pour vérifier le type traduit.
 
