@@ -14,16 +14,10 @@ let translateType = {
     show: "Spectacles"
 }
 
-for (i = 0; i < jsonDatas.length; i++) {
-    console.log(jsonDatas[i]);
-    // console.log("type de produit (eng) :", jsonDatas[i].type);
-    jsonDatas[i].translatedType = translateType[jsonDatas[i].type];
-
-    let itemName = jsonDatas[i].name;
-    let itemType = jsonDatas[i].translatedType;
-    let itemContent = jsonDatas[i].description;
-    let itemPrice = jsonDatas[i].price;
-    let itemQuantity = jsonDatas[i].quantity;
+for (let article of jsonDatas) {
+    console.log(article);
+    // console.log("type de produit (eng) :", article.type);
+    article.translatedType = translateType[article.type];
 
     let itemsContainer = document.getElementById("allItems");
 
@@ -32,24 +26,21 @@ for (i = 0; i < jsonDatas.length; i++) {
     console.log(newItemSheet);
     itemsContainer.appendChild(newItemSheet);
 
+    const createStructure = (titre, valeur, valueSuffix) => {
+        return `
+        <div class="itemType" style="width : 50%; display: flex; justify-content: space-between;">
+            <h4>${titre} :</h4>
+            <p>${valeur} ${valueSuffix ?? ''}</p>
+        </div>
+        `
+    }
+
     newItemSheet.innerHTML = `
-        <h3 class="itemName">${itemName}</h3>
-        <div class="itemType">
-            <h4>Catégorie : </h4>
-            <p>${itemType}</p>
-        </div>
-        <div class="itemType">
-            <h4>Description : </h4>
-            <p>${itemContent}</p>
-        </div>
-        <div class="itemType">
-            <h4>Prix : </h4>
-            <p>${itemPrice} €</p>
-        </div>
-        <div class="itemType">
-            <h4>Quantité disponible : </h4>
-            <p>${itemQuantity}</p>
-        </div>
+        <h3 class="itemName">${article.name}</h3>
+        ${createStructure('Catégorie', article.translatedType)}
+        ${createStructure('Description', article.description)}
+        ${createStructure('Prix', article.price, ' €')}
+        ${createStructure('Quantité en stock', article.quantity)}
     `
 }
 console.log("nouveau tableau de produits :", jsonDatas);
