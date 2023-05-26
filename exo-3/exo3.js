@@ -42,28 +42,27 @@ const findWinner = (playerChoice, computerChoice) => {
     if (playerChoice == computerChoice) {
         return 'Tied';
     }
-    if (playerChoice == ROCK) {
-        if (computerChoice == SCISSORS) {
+    if (playerChoice === ROCK) {
+        if (computerChoice === SCISSORS) {
             return 'Won';
         }
         return 'Lost';
     }
-    if (playerChoice == PAPER) {
-        if (computerChoice == ROCK) {
+    if (playerChoice === PAPER) {
+        if (computerChoice === ROCK) {
             return 'Won';
         } 
-        return gameResult;
+        return 'Lost';
     }
-    if (playerChoice == SCISSORS) {
-        if (computerChoice == PAPER) {
+    if (playerChoice === SCISSORS) {
+        if (computerChoice === PAPER) {
             return 'Won';
         }
         return 'Lost';
     }
-    if (playerChoice == CHEAT) {
+    if (playerChoice === CHEAT) {
         return 'Won';
-    }
-    
+    } 
 } // end function
 
 const playGame = () => {
