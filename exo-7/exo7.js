@@ -3,8 +3,7 @@ console.log("exo-7");
 // console.log(jsonDatas);
 // console.log(typeof(jsonDatas));
 
-// let data = jsonDatas;
-// console.log("base de données :", data);
+let data = jsonDatas;
 
 let translateType = {
     car: "Voitures",
@@ -14,10 +13,10 @@ let translateType = {
     show: "Spectacles"
 }
 
-const render = (list) => {
+const render = () => {
     let itemsContainer = document.getElementById("allItems");
-    itemsContainer.innerHTML = '';
-    for (let article of list) {
+    itemsContainer.innerHTML = ''; // remise à zéro du DOM
+    for (let article of data) {
         // console.log(article);
         // console.log("type de produit (eng) :", article.type);
         article.translatedType = translateType[article.type];
@@ -35,7 +34,7 @@ const render = (list) => {
                 </div>
             `
         }
-        
+
         newItemSheet.innerHTML = `
             <h3 class="itemName">${article.name}</h3>
             ${createStructure('Catégorie', article.translatedType)}
@@ -45,8 +44,11 @@ const render = (list) => {
         `
     }
 }
-render(jsonDatas);
-console.log(jsonDatas);
+render();
+console.log("data :", data);
+const filter = () => {
+    
+}
 let button = document.querySelector('button');
 button.addEventListener('click', function() {
     let input = document.getElementById('searchField').value.toLowerCase();
@@ -62,15 +64,18 @@ button.addEventListener('click', function() {
     console.log(dataArray);
     if (dataArray.includes(input)) {
         console.log("test ok !");
-        let jsonDatasCategory = jsonDatas.filter(product => product.translatedType.toLowerCase() === input);
-        console.log("tableau filtré : ",jsonDatasCategory);
-        render(jsonDatasCategory);
+        data = data.filter(product => product.translatedType.toLowerCase() === input);
+        console.log("tableau filtré : ", data);
+        render();
     } 
-    // else {
-    //     alert ('merci d\'entrer une catégorie valide : voitures, maison, jeu, veux vidéos, spectacles');
-    //     location.reload();
-    // }
+    else {
+        alert ('merci d\'entrer une catégorie valide : voitures, maison, jeu, veux vidéos, spectacles');
+    }
 });
-
-// console.log("nouveau tableau de produits :", jsonDatas);
+document.getElementById('inStock').onclick = function checkClick() {
+    console.log("test checkbox");
+    let inStock = data.filter(product => product.quantity > 0);
+    render(inStock);
+}
+// console.log("nouveau tableau de produits :", data);
 
