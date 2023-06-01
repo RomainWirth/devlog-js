@@ -18,4 +18,4 @@ console.log(fahrenheits);
 
 // la variable suivante prend en valeur la variable fahrenheits arrondi 
 let fahrenheitsRounded = Math.floor(fahrenheits);
-console.log(fahrenheitsRounded);
+console.log(fahrenheitsRounded); 
