@@ -22,7 +22,7 @@ const getPlayerChoice = (playerInput) => {
 } // end function 
 
 const getComputerChoice = () => { 
-    let randomNumber = Math.floor(Math.random() * (2 - 0) + 2); 
+    let randomNumber = Math.floor(Math.random() * (3 - 0) + 0); 
     // console.log(randomNumber); 
     let result; 
     if (randomNumber == 0) { 
